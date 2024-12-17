@@ -23,6 +23,6 @@ public class RAndMortyService {
         return restClient.get().uri("/character/?status="+status).retrieve().body(RickAndMortyResponse.class).results();
     }
     public int getNumberOfCharactersBySpecies(String species){
-        return restClient.get().uri("/character/?species="+species).retrieve().body(RickAndMortyResponse.class).results().size();
+        return restClient.get().uri("/character/?species="+species).retrieve().body(RickAndMortyResponse.class).info().count();
     }
 }
